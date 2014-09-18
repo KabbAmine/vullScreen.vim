@@ -1,8 +1,8 @@
 " Full-screen mode in GNU/Linux.
-" Version: 0.1
+" Version: 0.2
 
 " Creation     : 2014-09-16
-" Modification : 2014-09-16
+" Modification : 2014-09-18
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -41,6 +41,13 @@ let s:winState = "normal"
 " }
 
 " FUNCTIONS =============================
+function s:ClearWin()
+	" Resize splits and redraw window.
+	
+	execute "normal \<C-w>="
+	redraw!
+
+endfunction
 function s:GetWinProp()
 	" Returns the window's properties.
 	" [guioptions, width, height, x, y]
@@ -60,14 +67,14 @@ function s:VullScreen()
 			set guioptions-=m
 			set guioptions-=T
 			execute "!".s:FullScreenCmd.unix
-			redraw!
+			call s:ClearWin()
 			let s:winState = "fullscreen"
 		else
 			execute "!".s:FullScreenCmd.unix
 			let &guioptions = s:winProp[0]
 			let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
 			execute "winpos ".s:winProp[3]." ".s:winProp[4].""
-			redraw!
+			call s:ClearWin()
 			let s:winState = "normal"
 		endif
 	else
