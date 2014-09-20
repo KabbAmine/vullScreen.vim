@@ -1,5 +1,5 @@
 " Full-screen mode in GNU/Linux.
-" Version: 0.2
+" Version: 0.3
 
 " Creation     : 2014-09-16
 " Modification : 2014-09-20
