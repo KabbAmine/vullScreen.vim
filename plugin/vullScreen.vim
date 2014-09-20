@@ -2,7 +2,7 @@
 " Version: 0.2
 
 " Creation     : 2014-09-16
-" Modification : 2014-09-18
+" Modification : 2014-09-20
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -32,7 +32,7 @@ execute "imap ".g:vullscreen_key." <C-o>:VullScreen<CR>"
 " VARIABLES =============================
 " {
 " Fullscreen toggling command.
-let s:FullScreenCmd = {
+let s:fullScreenCmd = {
 			\"unix": "wmctrl -r \":ACTIVE:\" -b toggle,fullscreen"
 			\}
 
@@ -66,11 +66,11 @@ function s:VullScreen()
 			let s:winProp = s:GetWinProp()
 			set guioptions-=m
 			set guioptions-=T
-			execute "!".s:FullScreenCmd.unix
+			execute "!".s:fullScreenCmd.unix
 			call s:ClearWin()
 			let s:winState = "fullscreen"
 		else
-			execute "!".s:FullScreenCmd.unix
+			execute "!".s:fullScreenCmd.unix
 			let &guioptions = s:winProp[0]
 			let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
 			execute "winpos ".s:winProp[3]." ".s:winProp[4].""
