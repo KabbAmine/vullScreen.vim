@@ -10,15 +10,15 @@ I'm talking about a real full-screen mode, no menu and no toolbars as shown in t
 
 ## Installation
 
-VullScreen requires [wmctrl](http://tomas.styblo.name/wmctrl/) (Present in the default repositories of most GNU/Linux distributions), so install it using your prefered packet manager.
+VullScreen requires [wmctrl](http://tomas.styblo.name/wmctrl/) (Present in the default repositories of most GNU/Linux distributions), so install it using your preferred packet manager.
 
 Then, use your preferred method to install the plugin (I recommend using a plugin manager as [Vim-plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/gmarik/Vundle.vim) or [NeoBundle](https://github.com/Shougo/neobundle.vim)...)
 
-| Plugin manager | In vimrc | Installation command |
-|--------|--------|--------|
-| Vim-plug | Plug 'KabbAmine/vullScreen.vim' | PlugInstall |
-| Vundle | Plugin 'KabbAmine/vullScreen.vim' | PluginInstall |
-| NeoBundle | NeoBundle 'KabbAmine/vullScreen.vim' | NeoBundleInstall |
+| Plugin manager | In vimrc                             | Installation command |
+|----------------|--------------------------------------|----------------------|
+| Vim-plug       | Plug 'KabbAmine/vullScreen.vim'      | PlugInstall          |
+| Vundle         | Plugin 'KabbAmine/vullScreen.vim'    | PluginInstall        |
+| NeoBundle      | NeoBundle 'KabbAmine/vullScreen.vim' | NeoBundleInstall     |
 
 ## How to use?
 
