@@ -21,11 +21,7 @@ command! VullScreen call s:VullScreen()
 
 " MAPPINGS =============================
 " {
-if !exists('g:vullscreen_key')
-	let s:vullscreenKey = '<F11>'
-else
-	let s:vullscreenKey = g:vullscreen_key
-endif
+let s:vullscreenKey = !exists('g:vullscreen_key') ? '<F11>' : g:vullscreen_key
 
 execute "nmap ".s:vullscreenKey." :VullScreen<CR>"
 execute "imap ".s:vullscreenKey." <C-o>:VullScreen<CR>"
