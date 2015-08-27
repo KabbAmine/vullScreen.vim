@@ -2,7 +2,7 @@
 " Version: 0.3
 
 " Creation     : 2014-09-16
-" Modification : 2014-10-22
+" Modification : 2015-08-27
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -23,8 +23,8 @@ command! VullScreen call s:VullScreen()
 " {
 let s:vullscreenKey = !exists('g:vullscreen_key') ? '<F11>' : g:vullscreen_key
 
-execute "nmap ".s:vullscreenKey." :VullScreen<CR>"
-execute "imap ".s:vullscreenKey." <C-o>:VullScreen<CR>"
+execute "nnoremap ".s:vullscreenKey." :VullScreen<CR>"
+execute "inoremap ".s:vullscreenKey." <C-o>:VullScreen<CR>"
 " }
 
 " VARIABLES =============================
