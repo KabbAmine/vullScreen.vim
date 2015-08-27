@@ -17,8 +17,12 @@ let s:saveCpoptions = &cpoptions
 set cpoptions&vim
 
 " COMMANDS =============================
-command! VullScreen call s:VullScreen()
-
+silent command! -bar VullScreen
+			\ if executable('wmctrl')
+				\| call s:VullScreen()
+			\| else
+				\| echoerr '"wmctrl" is required, please see http://tomas.styblo.name/wmctrl/'
+			\| endif
 " MAPPINGS =============================
 " {
 let s:vullscreenKey = !exists('g:vullscreen_key') ? '<F11>' : g:vullscreen_key
@@ -59,24 +63,20 @@ endfunction
 function s:VullScreen()
 	" Main function.
 
-	if executable('wmctrl')
-		if s:winState == "normal"
-			let s:winProp = s:GetWinProp()
-			set guioptions-=m
-			set guioptions-=T
-			execute "!".s:fullScreenCmd.unix
-			call s:ClearWin()
-			let s:winState = "fullscreen"
-		else
-			execute "!".s:fullScreenCmd.unix
-			let &guioptions = s:winProp[0]
-			let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
-			execute "winpos ".s:winProp[3]." ".s:winProp[4].""
-			call s:ClearWin()
-			let s:winState = "normal"
-		endif
+	if s:winState == "normal"
+		let s:winProp = s:GetWinProp()
+		set guioptions-=m
+		set guioptions-=T
+		execute "!".s:fullScreenCmd.unix
+		call s:ClearWin()
+		let s:winState = "fullscreen"
 	else
-		echo "'wmctrl' is required, http://tomas.styblo.name/wmctrl/"
+		execute "!".s:fullScreenCmd.unix
+		let &guioptions = s:winProp[0]
+		let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
+		execute "winpos ".s:winProp[3]." ".s:winProp[4].""
+		call s:ClearWin()
+		let s:winState = "normal"
 	endif
 endfunction
 
