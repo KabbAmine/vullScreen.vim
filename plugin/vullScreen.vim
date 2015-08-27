@@ -43,13 +43,6 @@ let s:winState = "normal"
 " }
 
 " FUNCTIONS =============================
-function s:ClearWin()
-	" Resize splits and redraw window.
-	
-	execute "normal \<C-w>="
-	redraw!
-
-endfunction
 function s:GetWinProp()
 	" Returns the window's properties.
 	" [guioptions, width, height, x, y]
@@ -67,15 +60,15 @@ function s:VullScreen()
 		let s:winProp = s:GetWinProp()
 		set guioptions-=m
 		set guioptions-=T
-		execute "!".s:fullScreenCmd.unix
-		call s:ClearWin()
+		call system(s:fullScreenCmd.unix)
+		execute "normal \<C-w>="
 		let s:winState = "fullscreen"
 	else
-		execute "!".s:fullScreenCmd.unix
+		call system(s:fullScreenCmd.unix)
 		let &guioptions = s:winProp[0]
 		let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
 		execute "winpos ".s:winProp[3]." ".s:winProp[4].""
-		call s:ClearWin()
+		execute "normal \<C-w>="
 		let s:winState = "normal"
 	endif
 endfunction
