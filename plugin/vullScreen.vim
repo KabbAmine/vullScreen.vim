@@ -1,6 +1,5 @@
 " Full-screen mode in GNU/Linux.
-" Version: 0.5
-
+" Version: 0.6
 " Creation     : 2014-09-16
 " Modification : 2015-12-26
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
