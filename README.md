@@ -1,4 +1,4 @@
-# VullScreen - Full-screen mode for Vim
+# VullScreen, <small>Full-screen mode for Vim</small> [![GitHub version](https://badge.fury.io/gh/kabbamine%2Fvullscreen.vim.svg)](https://badge.fury.io/gh/kabbamine%2Fvullscreen.vim)
 
 ## Vull..what?
 
@@ -14,17 +14,19 @@ VullScreen requires [wmctrl](http://tomas.styblo.name/wmctrl/) (Present in the d
 
 Then, use your preferred method to install the plugin (I recommend using a plugin manager as [Vim-plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/gmarik/Vundle.vim) or [NeoBundle](https://github.com/Shougo/neobundle.vim)...)
 
-| Plugin manager | In vimrc                             | Installation command |
-|----------------|--------------------------------------|----------------------|
-| Vim-plug       | Plug 'KabbAmine/vullScreen.vim'      | PlugInstall          |
-| Vundle         | Plugin 'KabbAmine/vullScreen.vim'    | PluginInstall        |
-| NeoBundle      | NeoBundle 'KabbAmine/vullScreen.vim' | NeoBundleInstall     |
+| Plugin manager   | In vimrc                               | Installation command   |
+| ---------------- | -------------------------------------- | ---------------------- |
+| `Vim-plug`       | `Plug 'KabbAmine/vullScreen.vim'`      | `PlugInstall`          |
+| `Vundle`         | `Plugin 'KabbAmine/vullScreen.vim'`    | `PluginInstall`        |
+| `NeoBundle`      | `NeoBundle 'KabbAmine/vullScreen.vim'` | `NeoBundleInstall`     |
 
 ## How to use?
 
 With the command:
 
-	:VullScreen
+```
+:VullScreen
+```
 
 Or using the key `<F11>` in both *NORMAL* and *INSERT* mode.
 
@@ -32,7 +34,9 @@ Or using the key `<F11>` in both *NORMAL* and *INSERT* mode.
 
 Because its nice and common to a lot of programs, but if you want to change it to something else simply add to your `vimrc`:
 
-	let g:vullscreen_key = '<SOMETHING ELSE>'
+```
+let g:vullscreen_key = '<SOMETHING ELSE>'
+```
 
 ## Notes
 
@@ -42,7 +46,6 @@ You don't really need this plugin if you're using Vim on a terminal (The full-sc
 
 To wmctrl's author.
 
-To Bram Moolenaar for creating the best piece of software in the world :D
+To Bram Moolenaar for creating the best piece of software in the world :heart:
 
 To you if you're using vullScreen.
-
