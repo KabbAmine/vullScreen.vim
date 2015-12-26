@@ -2,7 +2,7 @@
 " Version: 0.5
 
 " Creation     : 2014-09-16
-" Modification : 2015-08-27
+" Modification : 2015-12-26
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -54,14 +54,14 @@ function s:VullScreen() " {{{1
 		set guioptions-=m
 		set guioptions-=T
 		call system(s:fullScreenCmd)
-		execute "normal \<C-w>="
+		wincmd =
 		let s:winState = 'fullscreen'
 	else
 		call system(s:fullScreenCmd)
 		let &guioptions = s:winProp[0]
 		let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
 		execute 'winpos ' . s:winProp[3] . ' ' . s:winProp[4] . ''
-		execute "normal \<C-w>="
+		wincmd =
 		let s:winState = 'normal'
 	endif
 endfunction
