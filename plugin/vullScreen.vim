@@ -6,7 +6,6 @@
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
-
 " Vim options {{{1
 if exists('g:vullscreen_loaded') || !has('unix')
     finish
@@ -21,50 +20,15 @@ set cpoptions&vim
 " Main command {{{1
 command! -bar VullScreen
 			\ if executable('wmctrl')
-				\| call s:VullScreen()
+				\| call vullScreen#Toggle()
 			\| else
 				\| echoerr '"wmctrl" is required, please see http://tomas.styblo.name/wmctrl/'
 			\| endif
 " Mappings {{{1
-let s:vullscreenKey = !exists('g:vullscreen_key') ? '<F11>' : g:vullscreen_key
-execute 'nnoremap ' . s:vullscreenKey . ' :VullScreen<CR>'
-execute 'inoremap ' . s:vullscreenKey . ' <C-o>:VullScreen<CR>'
-" 1}}}
-
-" VARIABLES =============================
-" Fullscreen toggling command {{{1
-let s:fullScreenCmd = 'wmctrl -r ":ACTIVE:" -b toggle,fullscreen'
-" Window state by default {{{1
-let s:winState = 'normal'
-" 1}}}
-
-" FUNCTIONS =============================
-function s:GetWinProp() " {{{1
-	" Returns the window's properties.
-	" [guioptions, width, height, x, y]
-
-	let [l:columns, l:lines] = [&columns, &lines]
-	let [l:posX, l:posY] = [getwinposx(), getwinposy()]
-	let l:guiOpt = has('gui_running') ? &guioptions : ''
-	return [l:guiOpt, l:columns, l:lines, l:posX, l:posY]
-endfunction
-function s:VullScreen() " {{{1
-	if s:winState ==# 'normal'
-		let s:winProp = s:GetWinProp()
-		set guioptions-=m
-		set guioptions-=T
-		call system(s:fullScreenCmd)
-		wincmd =
-		let s:winState = 'fullscreen'
-	else
-		call system(s:fullScreenCmd)
-		let &guioptions = s:winProp[0]
-		let [&columns, &lines] = [s:winProp[1], s:winProp[2]]
-		execute 'winpos ' . s:winProp[3] . ' ' . s:winProp[4] . ''
-		wincmd =
-		let s:winState = 'normal'
-	endif
-endfunction
+let s:map = !exists('g:vullscreen_key') ? '<F11>' : g:vullscreen_key
+execute 'nnoremap ' . s:map . ' :VullScreen<CR>'
+execute 'inoremap ' . s:map . ' <C-o>:VullScreen<CR>'
+unlet s:map
 " 1}}}
 
 " Restore default vim options {{{1
