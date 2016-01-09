@@ -1,4 +1,4 @@
-# VullScreen, <small>Full-screen mode for Vim</small> [![GitHub version](https://badge.fury.io/gh/kabbamine%2Fvullscreen.vim.svg)](https://badge.fury.io/gh/kabbamine%2Fvullscreen.vim)
+# VullScreen 0.6, <small>Full-screen mode for Vim</small>
 
 ## Vull..what?
 
