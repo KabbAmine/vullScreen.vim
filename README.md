@@ -1,4 +1,6 @@
-# VullScreen 0.6, <small>Full-screen mode for Vim</small>
+# VullScreen, <small>Full-screen mode for Vim</small>
+
+![Version badge](https://img.shields.io/badge/version-0.6-blue.svg?style=flat-square "Badge for version")
 
 ## Vull..what?
 
