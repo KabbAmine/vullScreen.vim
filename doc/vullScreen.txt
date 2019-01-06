@@ -1,8 +1,8 @@
-*vullScreen*	Full-screen mode for Vim
+*vullScreen*	Fullscreen mode for Vim
 
-	For Vim version 7.0 and above	Last change: 2014-09-20
+	For Vim version 7.0 and above	Last change: 2019-01-06
 
-	VULLSCREEN - FULL-SCREEN MODE FOR VIM IN GNU/LINUX~
+	VULLSCREEN - FULLSCREEN MODE FOR VIM IN GNU/LINUX~
 						from Kabbaj Amine~
 
 Mail	: amine.kabb@gmail.com
@@ -19,14 +19,15 @@ License : This file is placed in the public domain.
 	2.3. With Vundle			|vullscreen-installation:vundle|
 3. USAGE						|vullscreen-usage|
 4. CUSTOMIZATION				|vullscreen-custom|
-5. NOTES						|vullscreen-notes|
+5. FUNCTIONS				    |vullscreen-functions|
+6. NOTES						|vullscreen-notes|
 
 ========================================================================
 1. |DESCRIPTION|
 *vullscreen-description*
 
-Nothing fancy here (Except the strange name), vullScreen is a small vim plugin that allows you to toggle Vim in full-screen mode on GNU/Linux.
-We're talking about a real full-screen mode, no menu and no toolbars.
+Nothing fancy here (Except the strange name), vullScreen is a small vim plugin that allows you to toggle Vim in fullscreen mode on GNU/Linux.
+We're talking about a real fullscreen mode, no menu and no toolbars.
 
 ========================================================================
 2. |INSTALLATION|
@@ -59,7 +60,7 @@ Then proceed to the installation of the plugin with the following command: >
 3. |USAGE|
 *vullscreen-usage*
 
-Toggle between full-screen and normal mode with the command: >
+Toggle between fullscreen and normal mode with the command: >
 	:VullScreen
 Or using the key `<F11>` in both `NORMAL` and `INSERT` mode.
 
@@ -71,10 +72,26 @@ If you want to change `<F11>` to something else simply add to your `vimrc`: >
 	let g:vullscreen_key = '<SOMETHING ELSE>'
 >
 ========================================================================
-5. |NOTES|
+5. |FUNCTIONS|
+*vullscreen-functions*
+
+`vullScreen#toggle()`
+
+Toggle between fullscreen and normal mode.
+
+`vullScreen#enable()`
+
+Enable fullscreen mode.
+
+`vullScreen#disable()`
+
+Disable fullscreen mode.
+>
+========================================================================
+6. |NOTES|
 *vullscreen-notes*
 
-You don't really need this plugin if you're using Vim on a terminal (The full-screen option is included in most graphical terminals).
+You don't really need this plugin if you're using Vim on a terminal (The fullscreen option is included in most graphical terminals).
 
 Thanks to wmctrl's author.
 Thanks To Bram Moolenaar for creating the best piece of software in the world :D

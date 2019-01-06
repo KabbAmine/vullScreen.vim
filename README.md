@@ -1,12 +1,12 @@
-# VullScreen, <small>Full-screen mode for Vim</small>
+# VullScreen, <small>Fullscreen mode for Vim</small>
 
 ![Version badge](https://img.shields.io/badge/version-0.6-blue.svg?style=flat-square "Badge for version")
 
 ## Vull..what?
 
-Nothing fancy here (Except the strange name), **vullScreen** is a small vim plugin that allows you to toggle Vim in full-screen mode on GNU/Linux.
+Nothing fancy here (Except the strange name), **vullScreen** is a small vim plugin that allows you to toggle Vim in fullscreen mode on GNU/Linux.
 
-I'm talking about a real full-screen mode, no menu and no toolbars as shown in the following gif.
+I'm talking about a real fullscreen mode, no menu and no toolbars as shown in the following gif.
 
 ![vullScreen in action](.img/vullScreen.gif)
 
@@ -16,11 +16,11 @@ VullScreen requires [wmctrl](http://tomas.styblo.name/wmctrl/) (Present in the d
 
 Then, use your preferred method to install the plugin (I recommend using a plugin manager as [Vim-plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/gmarik/Vundle.vim) or [NeoBundle](https://github.com/Shougo/neobundle.vim)...)
 
-| Plugin manager   | In vimrc                               | Installation command   |
-| ---------------- | -------------------------------------- | ---------------------- |
-| `Vim-plug`       | `Plug 'KabbAmine/vullScreen.vim'`      | `PlugInstall`          |
-| `Vundle`         | `Plugin 'KabbAmine/vullScreen.vim'`    | `PluginInstall`        |
-| `NeoBundle`      | `NeoBundle 'KabbAmine/vullScreen.vim'` | `NeoBundleInstall`     |
+| Plugin manager | In vimrc                               | Installation command |
+| -------------- | -------------------------------------- | -------------------- |
+| `Vim-plug`     | `Plug 'KabbAmine/vullScreen.vim'`      | `PlugInstall`        |
+| `Vundle`       | `Plugin 'KabbAmine/vullScreen.vim'`    | `PluginInstall`      |
+| `NeoBundle`    | `NeoBundle 'KabbAmine/vullScreen.vim'` | `NeoBundleInstall`   |
 
 ## How to use?
 
@@ -30,7 +30,7 @@ With the command:
 :VullScreen
 ```
 
-Or using the key `<F11>` in both *NORMAL* and *INSERT* mode.
+Or using the key `<F11>` in both _NORMAL_ and _INSERT_ mode.
 
 ## Why F11?
 
@@ -42,7 +42,7 @@ let g:vullscreen_key = '<SOMETHING ELSE>'
 
 ## Notes
 
-You don't really need this plugin if you're using Vim on a terminal (The full-screen option is included in most graphical terminals).
+You don't really need this plugin if you're using Vim on a terminal (The fullscreen option is included in most graphical terminals).
 
 ## Thanks
 
